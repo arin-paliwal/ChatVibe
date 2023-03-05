@@ -8,8 +8,12 @@ import multer from 'multer';
 import morgan from 'morgan';
 import path from "path";
 import { fileURLToPath } from 'url';
-import authRoutes from "./routes/auth.js"
-import { register } from './controllers/auth';
+import { register } from './controllers/auth.js';
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js"
+import postsRoutes from "./routes/posts.js"
+import { verifyToken } from './middleware/auth.js';
+import createPost from "./controllers/posts.js"
 
 // CONFIGURATIONS
 const __filename=fileURLToPath(import.meta.url);
@@ -39,9 +43,12 @@ const upload=multer({storage});
 
 // ROUTES WITH FILES
 app.post("auth/register",upload.single("picture"),register);
+app.post("/posts",verifyToken,upload.single("picture"),createPost);
 
 // ROUTING
-app.use("/auth",authRoutes)
+app.use("/auth",authRoutes);
+app.use("/users",userRoutes);
+app.use("/posts",postsRoutes);
 
 // MONGOOSE SETUP
 
