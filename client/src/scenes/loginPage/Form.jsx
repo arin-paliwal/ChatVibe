@@ -95,12 +95,43 @@ const Form = () => {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   name="lastName"
-                  error={
-                    Boolean(touched.lastName) && Boolean(errors.lastName)
-                  }
+                  error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
+                <TextField
+                  label="Location"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  name="location"
+                  error={Boolean(touched.location) && Boolean(errors.location)}
+                  helperText={touched.location && errors.location}
+                  sx={{ gridColumn: "span 4" }}
+                />
+                <TextField
+                  label="Occupation"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  name="occupation"
+                  error={
+                    Boolean(touched.occupation) && Boolean(errors.occupation)
+                  }
+                  helperText={touched.occupation && errors.occupation}
+                  sx={{ gridColumn: "span 4" }}
+                />
+                <Box gridColumn="span 4"
+                border={`1 px solid ${palette.neutral.medium}`}
+                borderRadius="5px"
+                p="1 rem"
+                >
+                    <Dropzone
+                    acceptedFiles=".jpg, .jpeg, .png"
+                    multiple={false}
+                    onDrop={(acceptedFiles)=>
+                    setFieldValue("picture")
+                    }
+                    ></Dropzone>
+                </Box>
               </>
             )}
           </Box>
