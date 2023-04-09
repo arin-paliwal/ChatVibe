@@ -76,7 +76,34 @@ const Form = () => {
                 gridColumn: isNonMobileScreen ? undefined : "span 4",
               },
             }}
-          ></Box>
+          >
+            {isRegister && (
+              <>
+                <TextField
+                  label="First Name"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  name="firstName"
+                  error={
+                    Boolean(touched.firstName) && Boolean(errors.firstName)
+                  }
+                  helperText={touched.firstName && errors.firstName}
+                  sx={{ gridColumn: "span 2" }}
+                />
+                <TextField
+                  label="Last Name"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  name="lastName"
+                  error={
+                    Boolean(touched.lastName) && Boolean(errors.lastName)
+                  }
+                  helperText={touched.lastName && errors.lastName}
+                  sx={{ gridColumn: "span 2" }}
+                />
+              </>
+            )}
+          </Box>
         </form>
       )}
     </Formik>
