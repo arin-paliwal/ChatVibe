@@ -59,7 +59,15 @@ const Form=()=>{
                 setFieldValue,
                 resetForm,
             })=>(
-                <form onSubmit={handleSubmit}
+                <form onSubmit={handleSubmit}>
+                    <Box display="grid"
+                    gap="30px"
+                    gridTemplateColumns="repeat(4,minmax(0,1fr))"
+                    sx={{
+                        "& > div": {gridColumn:isNonMobileScreen?undefined:"span 4"},
+                    }}
+                    ></Box>
+                </form>
             )
             }
         </Formik>
