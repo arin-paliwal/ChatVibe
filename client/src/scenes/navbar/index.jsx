@@ -60,11 +60,11 @@ const Navbar = () => {
         {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
-            borderRadius="9px"
+            borderRadius="20px"
             gap="3rem"
             padding="0.1rem 1.5rem"
           >
-            <InputBase placeholder="Search..." />
+            <InputBase placeholder="Search Users or Posts" />
             <IconButton>
               <Search />
             </IconButton>
@@ -107,7 +107,7 @@ const Navbar = () => {
               sx={{
                 backgroundColor: neutralLight,
                 width: "150px",
-                borderRadius: ".0.25rem",
+                borderRadius: "20px",
                 p: "0.25rem 1rem",
                 "&.MuiSvgIcon-root": {
                   pr: "0.25rem",
@@ -142,7 +142,7 @@ const Navbar = () => {
           height="100%"
           zIndex="10"
           maxWidth="500px"
-          minWidth="300px"
+          minWidth="100px"
           backgroundColor={background}
         >
           <Box display="flex" justifyContent="flex-end" p="1rem">
@@ -158,7 +158,7 @@ const Navbar = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
-            gap="3rem"
+            gap="2rem"
           >
             <IconButton
               onClick={() => dispatch(setMode())}
@@ -196,8 +196,8 @@ const Navbar = () => {
                 value={fullName}
                 sx={{
                   backgroundColor: neutralLight,
-                  width: "150px",
-                  borderRadius: ".0.25rem",
+                  width: "100px",
+                  borderRadius: "20px",
                   p: "0.25rem 1rem",
                   "&.MuiSvgIcon-root": {
                     pr: "0.25rem",
