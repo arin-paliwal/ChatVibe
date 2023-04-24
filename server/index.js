@@ -49,7 +49,7 @@ app.post("auth/register",upload.single("picture"),register);
 app.post("/posts",verifyToken,upload.single("picture"),createPost);
 
 // ROUTING
-app.use("/auth",authRoutes);
+app.use("/auth",authRoutes); // link connected with /auth routes
 app.use("/users",userRoutes);
 app.use("/posts",postsRoutes);
 
