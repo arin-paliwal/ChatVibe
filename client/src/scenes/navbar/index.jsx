@@ -142,7 +142,7 @@ const Navbar = () => {
           height="100%"
           zIndex="10"
           maxWidth="500px"
-          minWidth="100px"
+          minWidth="170px"
           backgroundColor={background}
         >
           <Box display="flex" justifyContent="flex-end" p="1rem">
@@ -196,7 +196,7 @@ const Navbar = () => {
                 value={fullName}
                 sx={{
                   backgroundColor: neutralLight,
-                  width: "100px",
+                  width: "150px",
                   borderRadius: "20px",
                   p: "0.25rem 1rem",
                   "&.MuiSvgIcon-root": {
